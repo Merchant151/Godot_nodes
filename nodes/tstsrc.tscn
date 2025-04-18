@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://ug5aogjdf6er"]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
