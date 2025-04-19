@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://ug5aogjdf6er"]
+[gd_scene load_steps=2 format=3 uid="uid://ug5aogjdf6er"]
+
+[ext_resource type="PackedScene" uid="uid://bwiymargn5ht0" path="res://ObjectNodes/test_import_object.glb" id="1_b6m7w"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -7,3 +9,7 @@
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D"]
+
+[node name="test_import_object" parent="Node3D/StaticBody3D" instance=ExtResource("1_b6m7w")]
