@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://u7bilxgnobei"]
+
+[ext_resource type="PackedScene" uid="uid://bwiymargn5ht0" path="res://ObjectNodes/test_import_object.glb" id="1_m0tga"]
+
+[node name="ObjectTemplate" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+
+[node name="test_import_object" parent="StaticBody3D" instance=ExtResource("1_m0tga")]

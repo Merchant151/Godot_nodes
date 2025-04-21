@@ -1,15 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://ug5aogjdf6er"]
+[gd_scene load_steps=3 format=3 uid="uid://ug5aogjdf6er"]
 
 [ext_resource type="PackedScene" uid="uid://bwiymargn5ht0" path="res://ObjectNodes/test_import_object.glb" id="1_b6m7w"]
+[ext_resource type="PackedScene" uid="uid://u7bilxgnobei" path="res://objectTemplates/object_template.tscn" id="2_i7htb"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="ObjectTemplate" type="Node3D" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ObjectTemplate"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjectTemplate/StaticBody3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjectTemplate/StaticBody3D"]
 
-[node name="test_import_object" parent="Node3D/StaticBody3D" instance=ExtResource("1_b6m7w")]
+[node name="test_import_object" parent="ObjectTemplate/StaticBody3D" instance=ExtResource("1_b6m7w")]
+
+[node name="ObjectTemplate2" parent="." instance=ExtResource("2_i7htb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.9818)
