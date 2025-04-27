@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://ug5aogjdf6er"]
+[gd_scene load_steps=5 format=3 uid="uid://ug5aogjdf6er"]
 
 [ext_resource type="PackedScene" uid="uid://bwiymargn5ht0" path="res://ObjectNodes/test_import_object.glb" id="1_b6m7w"]
 [ext_resource type="PackedScene" uid="uid://u7bilxgnobei" path="res://objectTemplates/object_template.tscn" id="2_i7htb"]
+[ext_resource type="Script" uid="uid://o2yy5p8kl780" path="res://draw_test_script.gd" id="3_yiiul"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_eotw7"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="ObjectTemplate" type="Node3D" parent="."]
+visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ObjectTemplate"]
 
@@ -17,3 +21,8 @@
 
 [node name="ObjectTemplate2" parent="." instance=ExtResource("2_i7htb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.9818)
+visible = false
+
+[node name="MeshInstance3D_drawTest1" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_eotw7")
+script = ExtResource("3_yiiul")
