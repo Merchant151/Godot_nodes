@@ -1,5 +1,8 @@
 extends MeshInstance3D
 
+var rings = 50
+var radial_segments = 50
+var radius = 1
 
 func _ready(): 
 	# create an array for the ArrayMesh
@@ -13,6 +16,43 @@ func _ready():
 	var normals = PackedVector3Array()
 	var indices = PackedInt32Array()
 	#At this time we need to fill the data arrays with geometry. 
+	#using the ring example from the docs at this time 
+	
+	# Vertex indices.
+	var thisrow = 0
+	var prevrow = 0
+	var point = 0
+
+	# Loop over rings.
+	for i in range(rings + 1):
+		var v = float(i) / rings
+		var w = sin(PI * v)
+		var y = cos(PI * v)
+
+		# Loop over segments in ring.
+		for j in range(radial_segments + 1):
+			var u = float(j) / radial_segments
+			var x = sin(u * PI * 2.0)
+			var z = cos(u * PI * 2.0)
+			var vert = Vector3(x * radius * w, y * radius, z * radius * w)
+			verts.append(vert)
+			normals.append(vert.normalized())
+			uvs.append(Vector2(u, v))
+			point += 1
+
+			# Create triangles in ring using indices.
+			if i > 0 and j > 0:
+				indices.append(prevrow + j - 1)
+				indices.append(prevrow + j)
+				indices.append(thisrow + j - 1)
+
+				indices.append(prevrow + j)
+				indices.append(thisrow + j)
+				indices.append(thisrow + j - 1)
+
+		prevrow = thisrow
+		thisrow = point
+	
 	
 	#This step is where data is added to the array 
 	surface_array[Mesh.ARRAY_VERTEX] = verts
