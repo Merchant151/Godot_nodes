@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ug5aogjdf6er"]
+[gd_scene load_steps=6 format=3 uid="uid://ug5aogjdf6er"]
 
 [ext_resource type="PackedScene" uid="uid://bwiymargn5ht0" path="res://ObjectNodes/test_import_object.glb" id="1_b6m7w"]
+[ext_resource type="Script" uid="uid://dt7s2u7mce75t" path="res://scripts/camera_controller.gd" id="1_eotw7"]
 [ext_resource type="PackedScene" uid="uid://u7bilxgnobei" path="res://objectTemplates/object_template.tscn" id="2_i7htb"]
 [ext_resource type="Script" uid="uid://o2yy5p8kl780" path="res://draw_test_script.gd" id="3_yiiul"]
 
@@ -10,6 +11,7 @@
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.247205, 1.48434, 20.319)
+script = ExtResource("1_eotw7")
 
 [node name="ObjectTemplate" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22305, 0, -4.87889)
@@ -34,3 +36,4 @@ script = ExtResource("3_yiiul")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.09152, 31.6083, 5.70519)
 omni_range = 100.0
 omni_attenuation = 0.0
+script = ExtResource("1_eotw7")
