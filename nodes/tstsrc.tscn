@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ug5aogjdf6er"]
+[gd_scene load_steps=7 format=3 uid="uid://ug5aogjdf6er"]
 
 [ext_resource type="PackedScene" uid="uid://bwiymargn5ht0" path="res://ObjectNodes/test_import_object.glb" id="1_b6m7w"]
 [ext_resource type="Script" uid="uid://dt7s2u7mce75t" path="res://scripts/camera_controller.gd" id="1_eotw7"]
 [ext_resource type="PackedScene" uid="uid://u7bilxgnobei" path="res://objectTemplates/object_template.tscn" id="2_i7htb"]
 [ext_resource type="Script" uid="uid://o2yy5p8kl780" path="res://draw_test_script.gd" id="3_yiiul"]
+[ext_resource type="Texture2D" uid="uid://cbrwpb3qevhak" path="res://imgres/iss070e044474~orig.jpg" id="5_25pst"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_eotw7"]
 
@@ -37,3 +38,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.09152, 31.6083, 5.70519)
 omni_range = 100.0
 omni_attenuation = 0.0
 script = ExtResource("1_eotw7")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -349.933)
+pixel_size = 0.2
+texture = ExtResource("5_25pst")
