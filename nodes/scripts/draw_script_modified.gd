@@ -40,7 +40,8 @@ func _ready():
 			normals.append(vert.normalized())
 			uvs.append(Vector2(u, v))
 			point += 1
-
+			print(str('DEBUGING SEGMENTS: u:',u,' x:',x,' z:',z,' v:',v,' w:',w,' y:',y))
+			
 			# Create triangles in ring using indices.
 			if i > 0 and j > 0:
 				indices.append(prevrow + j - 1)
