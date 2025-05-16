@@ -29,7 +29,8 @@ func _ready():
 		var v = float(i) / rings
 		var w = sin(PI * v)
 		var y = cos(PI * v)
-
+		print(str('LOOPING OER RINGS: v: ',v,' w: ',w,' y: ',y))
+		
 		# Loop over segments in ring.
 		for j in range(radial_segments + 1):
 			var u = float(j) / radial_segments
@@ -40,7 +41,7 @@ func _ready():
 			normals.append(vert.normalized())
 			uvs.append(Vector2(u, v))
 			point += 1
-			print(str('DEBUGING SEGMENTS: u:',u,' x:',x,' z:',z,' v:',v,' w:',w,' y:',y))
+			print(str('DEBUGING SEGMENTS: u: ',u,' x: ',x,' z: ',z))
 			
 			# Create triangles in ring using indices.
 			if i > 0 and j > 0:
