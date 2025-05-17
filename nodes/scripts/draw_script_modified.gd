@@ -25,7 +25,7 @@ func _ready():
 	var point = 0
 
 	# Loop over rings.
-	for i in range(rings + 1):
+	for i in range(1 + 1):
 		var v = float(i) / rings
 		var w = sin(PI * v)
 		var y = cos(PI * v)
